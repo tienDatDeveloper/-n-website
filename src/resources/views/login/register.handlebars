@@ -1,0 +1,100 @@
+<form class="form-log-in">
+
+    <div class="desc">
+        Đăng Ký Tài Khoản
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="form-group">
+        <label for="fullname" class="form-label">Tên đầy đủ</label></br>
+        <input id="fullname" name="fullname" type="text" placeholder="VD: Tiến Đạt"></br>
+        <span class="form-message"></span></br>
+    </div>
+
+    <div class="form-group">
+        <label for="email" class="form-label">Gmail</label></br>
+        <input id="email" name="email" type="text" placeholder="VD:ahrithachdau102@gmail.com"></br>
+        <span class="form-message"></span></br>
+    </div>
+
+    <div class="form-group">
+        <label for="password" class="form-label">Mật khẩu</label></br>
+        <input id="password" name="password" type="text" placeholder="Nhập mật khẩu"></br>
+        <span class="form-message"></span></br>
+    </div>
+
+    <div class="form-group">
+        <label for="password" class="form-label">Nhập lại mật khẩu</label></br>
+        <input id="password" name="password" type="text" placeholder="Nhập lại mật khẩu"></br>
+        <span class="form-message"></span></br>
+    </div>
+
+    <button href="/login">Đăng kí</button>
+</form>
+
+
+
+<script>
+    function createAccount(options) {
+
+        var inForElement = document.querySelector(options.form);
+
+        if (inForElement) {
+
+            options.rules.forEach(function (rule) {
+
+                var nameElement = inForElement.querySelector(rule.selector);
+                var checkInputElement = nameElement.parentElement.querySelector('.form-message');
+
+
+                if (nameElement) {
+                    nameElement.onblur = function () {
+
+                        var checkInputName = rule.test(nameElement.value);
+
+                        if (checkInputName) {
+                            checkInputElement.innerText = checkInputName;
+                            nameElement.parentElement.classList.add('invalid');
+                        }
+                        else {
+                            checkInputElement.innerText = '';
+                            console.log("đã thành công");
+                            nameElement.parentElement.classList.remove('invalid');
+                        }
+
+                    }
+                }
+
+
+            });
+
+        }
+    }
+
+    createAccount.isRequired = (selector) => {
+        return {
+            selector: selector,
+            test: function (value) {
+                return value.trim() ? undefined : "Vui lòng nhập họ tên";
+            },
+        };
+    }
+
+    createAccount.isEmail = (selector) => {
+        return {
+            selector: selector,
+            test: function () {
+
+            },
+        };
+    };
+    createAccount({
+        form: '.form-log-in',
+        rules: [
+            createAccount.isRequired('#fullname'),
+            createAccount.isEmail('#email'),
+        ],
+
+    });
+</script>

@@ -1,0 +1,45 @@
+{{!-- <div class="container">
+  <div class="mt-4">
+    <div class="row content-page">
+      {{#each clothe}}
+      <div class="col-sm-6 col-lg-4 edit-content-page">
+        <div class="card" style="width: 18rem;">
+          <a href="/{{this.slug}}">
+            <img class="card-img-top" src="{{this.img}}" alt="this.name">
+          </a>
+          <div class="card-body">
+            <h5 class="card-title"><a href="/{{this.slug}}">{{this.name}}</a></h5>
+            <p class="card-text"><del>{{this.price}}</del> {{this.discount}}</p>
+            <a href="/{{this.slug}}" class="btn btn-buy">Mua Ngay</a>
+            <a href="#" class="btn btn-add-cart">Thêm Vào Giỏ</a>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div> --}}
+
+<div class="mt-4 container">
+  <div class="mt-2 row">
+    {{>search}}
+  </div>
+  <div class="mt-2 row">
+    {{>tool_endow}}
+  </div>
+   <div class="mt-2  row">
+     {{>display_endow}}
+   </div>
+  <div class="row">
+    <div class="col-9">
+      <div class="row">
+      {{>clothes}}
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="row">
+      {{>menu}}
+      </div>
+    </div>
+  </div>
+</div>

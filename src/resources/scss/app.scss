@@ -1,0 +1,65 @@
+.design-footer {
+  box-shadow: 5px 9px 18px 5px rgb(109, 109, 110);
+  border-radius: 5px;
+  margin-top: 30px;
+}
+.search1 {
+  margin-top: 15px;
+}
+.a {
+  color: #fff;
+}
+.btn-price-detail {
+  background-color: red;
+  color: #fff;
+}
+.btn-price-detail:hover {
+  background-color: rgb(109, 109, 110);
+  color: #fff;
+}
+.clothes-create {
+  padding-top: 1ch;
+  padding-bottom: 15px;
+}
+.btn-clothes-create {
+  padding-top: 10px;
+}
+.btn-log-in {
+  background-color: rgb(10, 10, 46);
+  color: gray;
+  border-radius: 5px;
+}
+
+.form-log-in {
+  padding-top: 40px;
+  padding-bottom: 128px;
+}
+.desc {
+  color: green;
+  border: #000;
+  font-size: 35px;
+}
+.logo a img {
+  height: 150px;
+  padding-right: 200px;
+}
+html,
+body {
+  font-weight: 400;
+  color: #707070;
+  background: url(https://kfcvietnam.com.vn/templates/images/bg.jpg) repeat top
+    center fixed;
+}
+ul {
+  list-style: none;
+}
+
+a.menu-function-admin {
+  color: red;
+  text-decoration: none;
+}
+
+a.menu-function-admin:hover {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}

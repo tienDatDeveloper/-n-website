@@ -1,0 +1,15 @@
+{{#each clothe}}
+  <div class="col-sm-6 col-lg-4 edit-content-page">
+    <div class="card" style="width: 16rem;">
+      <a href="/{{this.slug}}">
+        <img class="card-img-top" src="{{this.img}}" alt="this.name" />
+      </a>
+      <div class="card-body">
+        <h5 class="card-title"><a href="/{{this.slug}}">{{this.name}}</a></h5>
+        <p class="card-text"><del>{{this.price}}</del> {{this.discount}}</p>
+        <a href="/{{this.slug}}" class="btn btn-buy">Mua Ngay</a>
+        <a href="#" class="btn btn-add-cart">Thêm Vào Giỏ</a>
+      </div>
+    </div>
+  </div>
+{{/each}}

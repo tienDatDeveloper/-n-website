@@ -1,0 +1,80 @@
+<div class="form-detail">
+  <div class="container ">
+    <div class="row ">
+      <div class="col-4">
+        <div class="mt-5">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="{{clothe.img}}" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="{{clothe.img1}}" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="{{clothe.img2}}" alt="Third slide">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="mt-5">
+          <div class="name-discription">
+            <h2>{{clothe.discription}}</h2>
+          </div>
+          <div class="mt-5">
+            <div class="discount-show"><del>{{clothe.price}}</del> -- {{clothe.discount}}</div>
+            <div class="mt-3">
+              <div class="dropdown">
+                <div>Color
+                  <button class="btn btn-secondary dropdown-toggle btn-select-size" type="button"
+                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    __
+                  </button>
+                  <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+                    <button class="dropdown-item drop-size-item"
+                      data-value="{{clothe.color1}}">{{clothe.color1}}</button>
+                    <button class="dropdown-item drop-size-item"
+                      data-value="{{clothe.color2}}">{{clothe.color2}}</button>
+                    <button class="dropdown-item drop-size-item"
+                      data-value="{{clothe.color3}}">{{clothe.color3}}</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-5">
+              <button class="btn btn-price-detail">Mua Ngay</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-3">
+    Mô tả sản phẩm:</br>
+    {{clothe.discription}}
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var dropSize = document.querySelectorAll('.drop-size-item')
+    var btnSelectSize = document.querySelector('.btn-select-size')
+    dropSize.forEach(btn => {
+      btn.onclick = function () {
+        var size = this.getAttribute("data-value")
+        btnSelectSize.innerText = ""
+        btnSelectSize.innerText = size
+        btnSelectSize.value = size
+      }
+    })
+  })
+</script>
